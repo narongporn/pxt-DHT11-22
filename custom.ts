@@ -81,8 +81,7 @@ namespace dht11_dht22 {
 
             _sensorresponding = true
 
-            while (pins.digitalReadPin(dataPin) == 0); //sensor response
-            while (pins.digitalReadPin(dataPin) == 1); //sensor response
+           pins.pulseIn(dataPin, PulseValue.High, 100)
             
             //read data (5 bytes)
             for (let index = 0; index < 40; index++) {
